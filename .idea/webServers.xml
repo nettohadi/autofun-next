@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="aec60ce0-67c9-467e-b1f6-7f07678af7be" name="autofun_remote" url="http://autofun.hadi-syahbal.com">
+        <fileTransfer rootFolder="/home/hadisyah/autofun.hadi-syahbal.com" accessType="SFTP" host="hadi-syahbal.com" port="64000" sshConfigId="7929e53b-64ba-4ef4-acce-0ec99fbf6429" sshConfig="hadisyah@hadi-syahbal.com:64000 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

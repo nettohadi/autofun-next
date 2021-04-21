@@ -1,0 +1,169 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+button:focus, input:focus {
+  outline: none;
+}
+
+.hover-image {
+  cursor: pointer;
+  transition: transform linear .1s;
+}
+.hover-image:hover {
+  transition: transform linear .1s;
+  transform: scale(1.1);
+  background: none !important;
+  animation: none !important;
+}
+
+.review-container {
+  display: grid;
+  grid-template-areas:
+        'review_1 review_2'
+        'review_1 review_3'
+;
+  grid-gap: 20px;
+}
+
+
+
+.review-1 {grid-area: review_1; min-width: 600px}
+.review-2 {grid-area: review_2;}
+.review-3 {grid-area: review_3;}
+
+.review-2, .review-3 {
+  max-width: 470px;
+}
+
+@media screen and (max-width: 800px) {
+  .review-container {
+    grid-template-areas: 'review_1' 'review_2' 'review_3';
+  }
+
+  .review-2, .review-3 {
+    max-width: 100%;
+  }
+
+  .review-1 {
+    min-width: 0px;
+  }
+}
+
+.one-liner {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+
+.two-liner {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.three-liner {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+.four-liner {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+}
+
+.darken-image-70 {
+  filter: brightness(70%);
+}
+
+.darken-image-80 {
+  filter: brightness(80%);
+}
+
+.darken-image-90 {
+  filter: brightness(90%);
+}
+
+.text-shadow {
+  text-shadow: 2px 2px black;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.background-animate {
+  background: linear-gradient(-90deg, darkgrey, lightgrey, grey);
+  background-size: 200% 200%;
+  animation: gradient 2s ease infinite;
+}
+
+.image-fit {
+  object-fit: cover;
+  object-position: center;
+}
+
+.header-nav {
+  top: 0px;
+  transition: top linear .2s;
+}
+
+.header-nav.header-hidden{
+  top: -100px;
+  transition: top linear .2s;
+}
+
+/* Works on Chrome/Edge/Safari */
+.thin-scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.thin-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.thin-scrollbar::-webkit-scrollbar-thumb {
+  background-color: grey;
+  border-radius: 6px;
+  border: 5px solid lightgrey;
+}
+
+.main-content {
+  min-height: calc(100vh - (237px));
+}
+
+.main-wrapper {
+  margin-top: 90px;
+}
+
+.table-data td {
+  padding: 10px;
+  border: 1px solid black;
+}
+
+.table-data td.label {
+  background-color: #fbbf2a;
+  font-weight: bold;
+}
+
+.table-data td.value {
+  font-weight: bold;
+}
