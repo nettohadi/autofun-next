@@ -147,7 +147,7 @@ button:focus, input:focus {
 }
 
 .main-content {
-  min-height: calc(100vh - (237px));
+  min-height: calc(100vh - (20px));
 }
 
 .main-wrapper {

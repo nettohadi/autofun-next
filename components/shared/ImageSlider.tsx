@@ -1,8 +1,8 @@
 import React from 'react';
 import {Splide, SplideSlide} from '@splidejs/react-splide';
 import '@splidejs/splide/dist/css/themes/splide-default.min.css';
-import {ImageType} from "../types";
-import {NO_IMAGE} from "../helpers/consts";
+import {ImageType} from "../../types";
+import {NO_IMAGE} from "../../helpers/consts";
 
 
 type Props = {

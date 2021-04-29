@@ -1,5 +1,5 @@
 import React from 'react';
-import {CarType} from "../types";
+import {CarType} from "../../types";
 import Car from "./Car";
 
 type ColCountType = 4 | 5;

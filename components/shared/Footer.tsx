@@ -1,4 +1,4 @@
-import {CarType} from "../types";
+import {CarType} from "../../types";
 
 type Props = {
     cars:CarType[]

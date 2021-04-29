@@ -58,3 +58,10 @@ export interface ContentType {
     type?: any,
     writer?:WriterType | null
 }
+
+export interface UserType {
+    id?:string,
+    name?:string,
+    email?:string,
+    image?:string
+}

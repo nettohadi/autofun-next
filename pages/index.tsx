@@ -1,14 +1,14 @@
 import Head from 'next/head'
 import Api from "../helpers/Api";
-import BrandList from "../components/BrandList";
+import BrandList from "../components/shared/BrandList";
 import {BrandType, CarType, ContentType} from "../types";
-import Header from "../components/Header";
-import Spacer from "../components/Spacer";
+import Header from "../components/shared/Header";
+import Spacer from "../components/shared/Spacer";
 import ImageBannerWithSearchBar from "../components/home/ImageBannerWithSearchBar";
 import TopCar from "../components/home/TopCar";
 import Reviews from "../components/home/Reviews";
 import NewsAndPopularCars from "../components/home/NewsAndPopularCars";
-import Footer from "../components/Footer";
+import Footer from "../components/shared/Footer";
 import NewsAndReviews from "../components/home/NewsAndReviews";
 import {useEffect, useRef, useState} from "react";
 import {fetchUsingGql} from "../helpers/apollo";
@@ -16,10 +16,9 @@ import brandQuery from "../helpers/queries/brandQuery";
 import contentQuery from "../helpers/queries/contentQuery";
 import carQuery from "../helpers/queries/carQuery";
 
-export async function getStaticProps() {
+export async function getServerSideProps(context) {
     const {data: _brand} = await fetchUsingGql(brandQuery.getAll);
     const brands = _brand.brands;
-
 
     const {data:_car} = await fetchUsingGql(carQuery.getByGroup(), {group: "MOST_POPULAR"});
     const cars = _car.CarsByGroup;
@@ -45,8 +44,6 @@ type Props = {
 
 
 export default function Home({brands, cars, reviews, newsTips, popularCars}: Props) {
-
-
 
     useEffect(() => console.log('rerender the page'));
 

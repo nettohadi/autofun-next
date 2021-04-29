@@ -1,5 +1,5 @@
 import {CarType} from "../../types";
-import Car from "../Car";
+import Car from "../shared/Car";
 
 type Props = {
     cars: CarType[],

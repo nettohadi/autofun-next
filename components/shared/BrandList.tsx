@@ -1,4 +1,4 @@
-import {BrandType} from "../types";
+import {BrandType} from "../../types";
 import Image from "next/image";
 import Link from "next/link";
 import {useRouter} from "next/router";

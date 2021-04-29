@@ -3,6 +3,7 @@ import {gql, useMutation} from "@apollo/client";
 import loginQuery from "../helpers/queries/loginQuery";
 import carQuery from "../helpers/queries/carQuery";
 import {useRouter} from "next/router";
+import {UserContext} from "../components/shared/Layout";
 
 type Props = {};
 type LoginInput = {
@@ -11,6 +12,7 @@ type LoginInput = {
 }
 
 export default function signIn(props: Props) {
+    const {setUser} = React.useContext(UserContext);
     const [loginInput, setLoginInput] = useState<LoginInput>({email:'',password:''});
     const [login, {data, error, loading}] = useMutation(gql`${loginQuery.login}`,
                            {variables:{...loginInput}, errorPolicy:'all'});
@@ -20,6 +22,7 @@ export default function signIn(props: Props) {
     useEffect(() => {
         if(data?.Login){
             localStorage.setItem('apollo_token',data.Login.access_token);
+            setUser(data.Login.user);
             router.push('/');
         }
     }, [data])

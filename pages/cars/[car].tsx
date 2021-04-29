@@ -9,7 +9,7 @@ import dynamic from "next/dynamic";
 
 const ImageSlider = dynamic(
     () => {
-        return import("../../components/ImageSlider");
+        return import("../../components/shared/ImageSlider");
     },
     { ssr: false }
 );
@@ -27,14 +27,15 @@ export default function CarDetails(props: Props) {
     const {car : car_id} = router.query;
     const carGraph = useQuery<CarData>(gql`${carQuery.getById}`,{variables:{car_id}});
     const car = carGraph.data?.car;
+    const isAuthenticated = carGraph.error?.graphQLErrors[0].extensions.category != 'authentication';
 
     useEffect(() => { console.log(car)},[car])
 
     useEffect(() => {
-        if(carGraph.error?.graphQLErrors[0].extensions.category == 'authentication') {
+        if(!isAuthenticated) {
             router.push('/signIn');
         }
-    }, [carGraph.error])
+    }, [isAuthenticated])
 
     return (
         <div className="main-wrapper p-5">
@@ -44,12 +45,12 @@ export default function CarDetails(props: Props) {
                     <div style={{maxWidth:60}}><Image src={car?.brand.image || NO_IMAGE} width={50} height={50}/></div>
                     <div className="w-3/5 font-bold text-2xl p-3">{car?.name}</div>
                 </div>
-                <div className="flex md:flex-row flex-col gap-3" style={{height:'auto'}}>
-                    <div className="md:w-1/2">
+                <div className="flex md:flex-row flex-col gap-3 overflow-hidden" style={{height:'auto'}}>
+                    <div className="w-1/2">
                         <ImageSlider images={car?.images} height={400}/>
 
                     </div>
-                    <div className="md:w-1/2">
+                    <div className="w-1/2">
                         <table className="table-data w-full">
                             <tr className="">
                                 <td className="label">Name</td>

@@ -1,6 +1,6 @@
 import React from 'react';
-import {CarType} from "../types";
-import {NO_IMAGE} from "../helpers/consts";
+import {CarType} from "../../types";
+import {NO_IMAGE} from "../../helpers/consts";
 import {useRouter} from "next/router";
 
 type Props = { car:CarType };

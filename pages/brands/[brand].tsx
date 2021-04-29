@@ -4,16 +4,16 @@ import {fetchUsingGql} from "../../helpers/apollo";
 import carQuery from "../../helpers/queries/carQuery";
 import {BrandType, CarType} from "../../types";
 import Head from "next/head";
-import Header from "../../components/Header";
+import Header from "../../components/shared/Header";
 import {useQuery, gql} from "@apollo/client";
 import {useRouter} from "next/router";
 import brandQuery from "../../helpers/queries/brandQuery";
 import Image from "next/image";
 import {NO_IMAGE} from "../../helpers/consts";
-import Title from "../../components/Title";
-import Cars from "../../components/Cars";
-import BrandList from "../../components/BrandList";
-import Footer from "../../components/Footer";
+import Title from "../../components/shared/Title";
+import Cars from "../../components/shared/Cars";
+import BrandList from "../../components/shared/BrandList";
+import Footer from "../../components/shared/Footer";
 
 type Props = {
 

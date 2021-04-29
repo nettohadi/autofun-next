@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import {CarType, getCarPlaceholder} from "../../types";
-import Car from "../../components/Car";
+import Car from "../shared/Car";
 import Api from "../../helpers/Api";
 import {useLazyQuery, gql} from "@apollo/client";
 import carQuery from "../../helpers/queries/carQuery";
-import Cars from "../Cars";
+import Cars from "../shared/Cars";
 
 type Props = {
     cars:CarType[]

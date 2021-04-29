@@ -1,6 +1,6 @@
 import React from 'react';
-import ImageBanner from "../../components/ImageBanner";
-import SearchBar from "../../components/SearchBar";
+import ImageBanner from "../shared/ImageBanner";
+import SearchBar from "../shared/SearchBar";
 
 type Props = {};
 
