@@ -11,5 +11,13 @@ export default {
                     }   
                 }   
             }
-          `
+          `,
+    logout: `             
+            mutation { 
+                Logout{
+                    status
+                    message
+                }         
+            }      
+    `
 }

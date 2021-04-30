@@ -123,12 +123,12 @@ button:focus, input:focus {
 
 .header-nav {
   top: 0px;
-  transition: top linear .2s;
+  transition: top linear .3s;
 }
 
 .header-nav.header-hidden{
-  top: -100px;
-  transition: top linear .2s;
+  top: -300px;
+  transition: top linear .3s;
 }
 
 /* Works on Chrome/Edge/Safari */
