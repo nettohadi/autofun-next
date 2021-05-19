@@ -64,3 +64,12 @@ export function debounce(func:any, wait:number) {
     clearTimeout(timeout);
     timeout = setTimeout(later, wait);
 }
+
+export function range (count:number) : number[]{
+    let ranges:number[] = [];
+    for(let num=1; num <= count; num++){
+        ranges.push(num);
+    }
+
+    return ranges;
+}

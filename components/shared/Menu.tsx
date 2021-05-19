@@ -3,6 +3,7 @@ import {UserContext} from "./Layout";
 import {NO_IMAGE} from "../../helpers/consts";
 import UserMenu from "./UserMenu";
 import {useClickOutside} from "../../helpers";
+import {log} from "util";
 
 type Props = {};
 
@@ -28,6 +29,10 @@ const Menu: React.FC = (props: Props) => {
 
     const liElement = React.useRef<HTMLLIElement>(null);
     const menuElement = React.useRef<HTMLDivElement>(null);
+
+    React.useEffect(() => console.log('useEffect Menu'));
+
+    console.log('rerender Menu');
 
 
     return (

@@ -65,17 +65,6 @@ export default function     TopCar({cars}: Props) {
                 })}
             </div>
             <Cars cars={selectedCars}/>
-            {/*<div className="p-7 overflow-hidden" style={{minHeight: 450}}>*/}
-            {/*    <div className="grid grid-cols-2 md:grid-cols-4 xl:grid-cols-5 sm:grid-cols-3 gap-10">*/}
-            {/*        {*/}
-            {/*            selectedCars?.map((car) => {*/}
-            {/*                return (*/}
-            {/*                    <Car car={car} key={car.id}/>*/}
-            {/*                )*/}
-            {/*            })*/}
-            {/*        }*/}
-            {/*    </div>*/}
-            {/*</div>*/}
         </div>
     );
 };

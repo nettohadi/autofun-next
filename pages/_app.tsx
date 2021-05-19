@@ -3,6 +3,7 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 config.autoAddCss = false;
 import {client} from "../helpers/apollo";
+import '../styles/tailwind.css'
 import '../styles/globals.css'
 import Layout from "../components/shared/Layout";
 

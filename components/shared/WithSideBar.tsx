@@ -6,6 +6,7 @@ type Props = {
 };
 
 export default function WithSideBar({children}: Props) {
+    console.log('rerender side bar');
     return (
         <div className="flex flex-row" style={{minHeight:"calc(100vh - 20px)"}}>
             <div className="w-1/5 flex flex-row">

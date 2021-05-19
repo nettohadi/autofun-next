@@ -29,16 +29,14 @@ export default function UserMenu({isVisible, refElement}: Props) {
 
     const [logout, { data }] = useMutation<LogoutData>(gql`${authMutation.logout}`);
 
-    const handlelogout = () => {
-      logout();
-    };
-
     useEffect(() => {
         if(data && data.Logout.status) {
             setUser({});
             router.push('/');
         }
     }, [data])
+
+    React.useEffect(() => console.log('useEffect UserMenu'));
 
     console.log('rerender UserMenu');
 
@@ -62,25 +60,25 @@ export default function UserMenu({isVisible, refElement}: Props) {
                     </div>
                 </li>
                 <li className={whenSignedIn}>
-                    <FontAwesomeIcon className="mr-2" icon={icon.faUser}></FontAwesomeIcon>
+                    <FontAwesomeIcon className="mr-2" icon={icon.faUser}/>
                     Profile
                 </li>
                 <li className={whenSignedIn}>
-                    <FontAwesomeIcon className="mr-2" icon={icon.faFolderOpen}></FontAwesomeIcon>
+                    <FontAwesomeIcon className="mr-2" icon={icon.faFolderOpen}/>
                     <Link href="/cars/list">
                         <a>Manage</a>
                     </Link>
                 </li>
                 <li className={whenSignedIn}>
-                    <FontAwesomeIcon className="mr-2" icon={icon.faCogs}></FontAwesomeIcon>
+                    <FontAwesomeIcon className="mr-2" icon={icon.faCogs}/>
                     Settings
                 </li>
                 <li className={whenSignedIn} onClick={() => logout()}>
-                    <FontAwesomeIcon className="mr-2" icon={icon.faSignOutAlt}></FontAwesomeIcon>
+                    <FontAwesomeIcon className="mr-2" icon={icon.faSignOutAlt}/>
                     Sign Out
                 </li>
                 <li className={whenSignedout}>
-                    <FontAwesomeIcon className="mr-2" icon={icon.faSignInAlt}></FontAwesomeIcon>
+                    <FontAwesomeIcon className="mr-2" icon={icon.faSignInAlt}/>
                     <Link href="/signIn">
                         <a>Sign In</a>
                     </Link>

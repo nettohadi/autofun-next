@@ -56,6 +56,39 @@ export default  {
               power
             }
         }
+    `,
+    getAll: `
+            query paginate($page: Int = 1 ){
+              carsAll (page:$page){
+                data{
+                  id
+                  name
+                  image
+                  min_price
+                  max_price
+                  images {
+                    id
+                    url
+                  }
+                  group
+                  brand {
+                    id
+                    name
+                    image
+                  },
+                  segmen
+                  body_type
+                  transmission
+                  fuel
+                  power
+                },                            
+                paginatorInfo {
+                  currentPage
+                  total      
+                  perPage      
+                }
+              }
+        }
     `
 
 }
