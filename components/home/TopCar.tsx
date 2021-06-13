@@ -49,7 +49,7 @@ export default function     TopCar({cars}: Props) {
 
     return (
         <div className="w-full overflow-hidden">
-            <div className="grid grid-cols-2 md:grid-cols-5 xl:grid-cols-7 mx-auto border-b-2 pb-3 h-auto" style={{width: '90%'}}>
+            <div className="grid  grid-cols-2 md:grid-cols-5 xl:grid-cols-7 mx-auto border-b-2 pb-3 h-auto" style={{width: '90%'}}>
                 {categories.map((item) => {
                     return (
                         <div className={`py-3 ${item.const == selectedGroupId && 'border-b-4 border-yellow-400'}`} key={item.id}>
