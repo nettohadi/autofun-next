@@ -10,8 +10,8 @@ export default function Modal({isVisible, children}: Props) {
     console.log('rerender modal');
     return (
         <div className={`w-auto h-auto overflow-hidden fixed top-0 right-0 left-0 bottom-0 text-center ${!isVisible && 'hidden'}`} style={{zIndex: 11}}>
-            <div style={styles.modalOverlay}></div>
-            <div style={styles.modalContent} className="shadow-md">
+            <div className="fixed" style={styles.modalOverlay}></div>
+            <div className="shadow-md fixed" style={styles.modalContent}>
                 {children}
             </div>
 
@@ -21,7 +21,6 @@ export default function Modal({isVisible, children}: Props) {
 
 const styles = {
     modalContent: {
-        position: "fixed",
         width: "95%",
         height: "auto",
         minHeight: "500px",
@@ -38,7 +37,6 @@ const styles = {
         borderRadius: 7
     },
     modalOverlay: {
-        position: "fixed",
         left: 0,
         top: 0,
         width: "100%",

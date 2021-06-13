@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+.fixed {
+  position: fixed;
+}
+
 button:focus, input:focus {
   outline: none;
 }
